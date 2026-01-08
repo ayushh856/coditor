@@ -10,9 +10,3 @@ generator client {
 datasource db {
   provider = "mongodb"
 }
-
-model User {
-  id String @id @default(cuid()) @map("_id")
-  name String?
-  email String @unique
-}
