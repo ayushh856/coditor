@@ -26,8 +26,8 @@ model User {
   accounts Account[]
   role     UserRole  @default(USER)
 
-  myPlaground Playground[]
-  staredPlayground StarMark[]
+  myPlayground Playground[]
+  starredPlayground StarMark[]
   chatMessages ChatMessage[]
 
   createdAt DateTime @default(now())
@@ -62,6 +62,7 @@ enum Templates {
   HONO
   ANGULAR
 }
+
 model Playground {
   id  String @id @default(cuid()) @map("_id")
   title  String
@@ -70,13 +71,12 @@ model Playground {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime @updatedAt
  
- Starmark   StarMark[]
+  Starmark   StarMark[]
   userId  String
   user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   templateFiles TemplateFile[]
 }
-
 
 model StarMark {
   id  String @id @default(cuid()) @map("_id")
@@ -98,7 +98,6 @@ model TemplateFile {
   playgroundId String @unique
   playground   Playground @relation(fields: [playgroundId], references: [id], onDelete: Cascade)
 }
-
 
 model ChatMessage {
   id  String @id @default(cuid()) @map("_id")
