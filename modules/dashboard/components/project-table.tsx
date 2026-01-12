@@ -53,6 +53,7 @@ import {
     Eye,
 } from "lucide-react";
 import { toast } from "sonner";
+import { MarkedToggleButton } from "./marked-toggle";
 // import { MarkedToggleButton } from "./marked-toggle";
 
 interface ProjectTableProps {
@@ -194,7 +195,7 @@ export default function ProjectTable({
                                 <TableCell>
                                     <Badge
                                         variant="outline"
-                                        className="bg-[#E93F3F15] text-[#303030] border-[#303030]"
+                                        className="bg-[#E93F3F15] text-[#E93F3F] border-[#E93F3F]"
                                     >
                                         {project.template}
                                     </Badge>
@@ -227,9 +228,9 @@ export default function ProjectTable({
                                             </Button>
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent align="end" className="w-48">
-                                            {/* <DropdownMenuItem asChild>
+                                            <DropdownMenuItem asChild>
                                                 <MarkedToggleButton markedForRevision={project.Starmark[0]?.isMarked} id={project.id} />
-                                            </DropdownMenuItem> */}
+                                            </DropdownMenuItem>
                                             <DropdownMenuItem asChild>
                                                 <Link
                                                     href={`/playground/${project.id}`}

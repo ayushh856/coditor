@@ -19,7 +19,6 @@ const AddNewButton = () => {
     } | null>(null)
     const router = useRouter()
 
-
     const handleSubmit = async (data: {
         title: string;
         template: "REACT" | "NEXTJS" | "EXPRESS" | "VUE" | "HONO" | "ANGULAR";
