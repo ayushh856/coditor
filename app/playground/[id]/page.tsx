@@ -33,8 +33,8 @@ import {
     TemplateFile,
     TemplateFolder,
 } from "@/modules/playground/lib/path-to-json";
-// import WebContainerPreview from "@/modules/webcontainers/components/webcontainer-preview";
-// import { useWebContainer } from "@/modules/webcontainers/hooks/useWebContainer";
+import WebContainerPreview from "@/modules/webcontainers/components/webcontainer-preview";
+import { useWebContainer } from "@/modules/webcontainers/hooks/useWebContainer";
 import {
     AlertCircle,
     Bot,
@@ -82,14 +82,14 @@ const MainPlaygroundPage = () => {
         updateFileContent
     } = useFileExplorer();
 
-    // const {
-    //     serverUrl,
-    //     isLoading: containerLoading,
-    //     error: containerError,
-    //     instance,
-    //     writeFileSync,
-    //     // @ts-ignore
-    // } = useWebContainer({ templateData });
+    const {
+        serverUrl,
+        isLoading: containerLoading,
+        error: containerError,
+        instance,
+        writeFileSync,
+        // @ts-ignore
+    } = useWebContainer({ templateData });
 
     // const lastSyncedContent = useRef<Map<string, string>>(new Map());
 
@@ -381,7 +381,7 @@ const MainPlaygroundPage = () => {
 
                             <div className="flex items-center gap-1">
                                 <Tooltip>
-                                    <TooltipTrigger>
+                                    <TooltipTrigger asChild>
                                         <Button
                                             size="sm"
                                             variant="outline"
@@ -511,7 +511,7 @@ const MainPlaygroundPage = () => {
                                             />
                                         </ResizablePanel>
 
-                                        {/* {isPreviewVisible && (
+                                        {isPreviewVisible && (
                                             <>
                                                 <ResizableHandle />
                                                 <ResizablePanel defaultSize={50}>
@@ -526,7 +526,7 @@ const MainPlaygroundPage = () => {
                                                     />
                                                 </ResizablePanel>
                                             </>
-                                        )} */}
+                                        )}
                                     </ResizablePanelGroup>
                                 </div>
                             </div>
